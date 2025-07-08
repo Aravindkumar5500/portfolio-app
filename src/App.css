@@ -2,33 +2,251 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Header Navigation */
 header ul li {
-  @apply px-2;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
+/* Custom Backgrounds */
 .bg-primary {
-  background: rgb(85 81 227);
+  background-color: #000;
 }
+
 .bg-secondary {
-  background: #222692;
+  background-color: #000;
 }
 
-
+/* Mobile Navigation */
 .mobile-nav {
-  @apply fixed top-10 left-0 bg-gray-800 w-full h-1/4 ;
-
-}
-.mobile-nav  li {
-  @apply w-full h-full text-center border-b-2;
+  @apply fixed top-10 left-0 w-full h-1/4 bg-gray-800 z-50;
 }
 
+.mobile-nav li {
+  @apply w-full h-full text-center border-b-2 border-gray-600 text-white;
+}
+
+/* Project Description Overlay */
 .project-desc {
-  @apply absolute left-0 right-0 bottom-0 top-0 bg-secondary  opacity-0 duration-500 hover:opacity-100
-}
-.btn {
-  @apply bg-primary px-5 py-2 font-bold  hover:border-2 border-white  rounded;
+  @apply absolute inset-0 bg-secondary opacity-0 duration-500 hover:opacity-100 flex items-center justify-center text-white;
 }
 
+/* Buttons */
+.btn {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  border-color: #ea580c;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.btn:hover {
+  border-width: 2px;
+}
+@media (min-width: 640px) {
+  .btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .btn {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .btn {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
+
+/* Hero Section */
+.hero-subtitle {
+  color: tomato;
+}
+
+.name {
+  @apply text-[#e8af66];
+}
+
+.heroimg {
+  width: 550px;
+  height: 600px;
+  position: relative;
+  display: block;
+  align-self: flex-end;
+  justify-self: end;
+}
+
+/* Call to Action Text */
+.get {
+  font-size: 20px;
+  font-weight: bold;
+  color: antiquewhite;
+  text-align: center;
+  display: flex;
+  margin-left: 230px;
+}
+
+/* .abo {
+  @apply ml-[220px];
+} */
+
+.res {
+  margin-left: 1.25rem; /* Tailwind's ml-5 is 1.25rem */
+}
+
+.respara {
+  @apply mt-1 flex items-center;
+}
+
+.down {
+  margin-top: 0.5rem; /* Tailwind's mt-2 is 0.5rem */
+  align-self: center;  /* Tailwind's self-center */
+}
+
+/* Contact Section */
+.contact {
+  @apply flex justify-center ml-[159px];
+}
+
+/* Projects Section */
+.pro,
+.propara {
+  @apply flex self-center;
+}
+
+/* Marquee Animation */
+.marquee-wrapper {
+  @apply overflow-hidden bg-black w-screen py-5;
+}
+
+.marquee {
+  @apply flex gap-5 w-max animate-marquee;
+}
+
+.marquee img {
+  @apply h-[120px] rounded-lg;
+}
+
+/* Custom Keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tailwind Layer for Animation */
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+}
+
+
+
+
+.herosec{
+  padding: 150px;
+  /* margin: 25px; */
+}
+.herosec {
+  padding: 2rem 1rem; /* 2rem top/bottom, 1rem left/right */
+  /* margin: 25px; */
+}
+
+
+/* html,
+body {
+    margin: 10px;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.glow-on-hover{
+  margin: 25px;
+} */

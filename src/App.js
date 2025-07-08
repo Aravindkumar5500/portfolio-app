@@ -5,8 +5,10 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Hero from './Components/Hero';
+
 import Project from './Components/Project';
 import Resume from './Components/Resume';
+import Skillset from './Components/Skillset';
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
    <Hero></Hero>
    <About></About>
    <Project></Project>
+    <Skillset></Skillset>
    <Resume></Resume>
    <Contact></Contact>
+  
    <Footer></Footer>
    
    
