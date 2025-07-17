@@ -63,3 +63,12 @@ li:hover{
   transition: background-color 0.3s ease, color 0.3s ease;
  
 }
+header{
+  position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 50; /* or higher */
+ background-color: transparent;
+ backdrop-filter: blur(5px);
+}
