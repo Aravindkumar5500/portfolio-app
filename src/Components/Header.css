@@ -1,0 +1,65 @@
+/* Mobile Navigation */
+.mobile-nav {
+  @apply fixed top-10 left-0 w-full h-1/4  z-50;
+    background-color: transparent; /* Changed to a light blue background */
+  color: antiquewhite;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect */
+}
+
+.mobile-nav li {
+  @apply w-full h-full text-center  text-white;
+}
+
+.mobile-nav li:hover {
+    
+    color: #f9a56e;
+    transition: background-color 0.3s ease;
+}
+.welcome {
+  @apply font-bold px-2 text-rose-300;
+  font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+        color: #f9a56e;
+        background-color: rgba(255, 255, 255, 0.2); /* Darker on hover */
+    }
+}
+
+li:hover{
+ 
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: none;
+  color:rgb(245, 151, 89);
+  transition: color 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+ 
+}

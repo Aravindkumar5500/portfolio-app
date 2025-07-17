@@ -17,14 +17,6 @@ header ul li {
   background-color: #000;
 }
 
-/* Mobile Navigation */
-.mobile-nav {
-  @apply fixed top-10 left-0 w-full h-1/4 bg-gray-800 z-50;
-}
-
-.mobile-nav li {
-  @apply w-full h-full text-center border-b-2 border-gray-600 text-white;
-}
 
 /* Project Description Overlay */
 .project-desc {
@@ -37,7 +29,7 @@ header ul li {
   color: #fff;
   font-weight: bold;
   border-radius: 0.25rem;
-  border-color: #ea580c;
+  color: #f2a546;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-top: 0.5rem;
@@ -85,14 +77,6 @@ html {
   @apply text-[#e8af66];
 }
 
-.heroimg {
-  width: 550px;
-  height: 600px;
-  position: relative;
-  display: block;
-  align-self: flex-end;
-  justify-self: end;
-}
 
 /* Call to Action Text */
 .get {
@@ -104,9 +88,7 @@ html {
   margin-left: 230px;
 }
 
-/* .abo {
-  @apply ml-[220px];
-} */
+
 
 .res {
   margin-left: 1.25rem; /* Tailwind's ml-5 is 1.25rem */
@@ -160,6 +142,7 @@ html {
   .animate-marquee {
     animation: marquee 20s linear infinite;
   }
+
 }
 
 
@@ -167,86 +150,79 @@ html {
 
 .herosec{
   padding: 150px;
-  /* margin: 25px; */
+ 
 }
 .herosec {
   padding: 2rem 1rem; /* 2rem top/bottom, 1rem left/right */
-  /* margin: 25px; */
+  
 }
 
-
-/* html,
-body {
-    margin: 10px;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: #000;
-}
 
 .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
 
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 15px auto;
 }
-
-.glow-on-hover:active {
-    color: #000
+.contactmail {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin-bottom: 1.5rem; /* Tailwind's mb-6 is 1.5rem */
 }
-
-.glow-on-hover:active:after {
-    background: transparent;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto;
 }
-
-.glow-on-hover:hover:before {
-    opacity: 1;
+.marquee-wrapper {
+  overflow: hidden;
+  background: #000;
+  width: 100%;
+  padding: 1rem 0;
 }
+  .marquee {
+    display: flex;
+    gap: 1.25rem; /* Tailwind's gap-5 is 1.25rem */
+    width: max-content;
+    animation: marquee 20s linear infinite;
 
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
+  }
+
+  .marquee img {
+    height: 7.5rem; /* Tailwind's h-30 is 7.5rem */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  }
+  .marquee-wrapper {
+    overflow: hidden;
+    background: #000;
     width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
+    padding: 1rem 0; /* Tailwind's py-5 is 1.25rem */
+  }
+  .marquee {
+    display: flex;
+    gap: 1.25rem; /* Tailwind's gap-5 is 1.25rem */
+    width: max-content;
+    animation: marquee 20s linear infinite;
+  }             
+  .marquee img {
+    height: 7.5rem; /* Tailwind's h-30 is 7.5rem */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  }
 
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-.glow-on-hover{
-  margin: 25px;
-} */
+  

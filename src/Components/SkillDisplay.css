@@ -1,4 +1,10 @@
 /* Add at the end of SkillDisplay.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #000000;
+}
 
 /* Responsive container */
 .skill-main {
@@ -11,9 +17,9 @@
 
 /* Responsive skill section */
 .skill-section {
-  background: #181c23;
+  background: #000000;
   border-radius: 1.25rem;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 4px 24px 0 rgba(171, 169, 169, 0.25);
   padding: 2rem;
   max-width: 500px;
   width: 100%;

@@ -1,0 +1,62 @@
+.project-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+   background-color: black;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.project-container:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.imagebox {
+  width: 50%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.imagebox:hover {
+  transform: scale(1.05);
+}   
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+.pro:hover{
+    color: #dff96e;
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+
+}
+.propara:hover{
+    color: #706ef9;
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    font-weight: lighter;
+       
+
+}
+.readmore:hover{
+    color: #706ef9;
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    font-weight: lighter;
+}

@@ -1,0 +1,19 @@
+.par {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin-bottom: 1.5rem; /* Tailwind's mb-6 is 1.5rem */
+  color: #eb0c0c;
+}
+.thoch:hover {
+  color: #f9c66e;
+  transition: background-color 0.3s ease;
+  transform: scale(1.05);
+border: 1px solid #f9c66e;
+padding: 10px;
+border-radius: 5px;
+background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s ease, color 0.3s ease;
+}

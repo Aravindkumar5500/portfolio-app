@@ -1,0 +1,27 @@
+.footer{
+    background-color: #000000;
+    color: #868685;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 500;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  
+
+}
+
+    .footer:hover {
+        background-color: transparent;
+           backdrop-filter: blur(10px);
+        
+ 
+
+    }
+   

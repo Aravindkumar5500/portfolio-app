@@ -1,4 +1,5 @@
 import ResumeImg from "../Assets/Aravind.png";
+import "./Resume.css";
 
 export default function Resume() {
   const config = {
@@ -11,7 +12,7 @@ export default function Resume() {
         id="resume"
         className="flex flex-col md:flex-row bg-secondary px-5"
       >
-        <div className="py-5 md:w-1/2 flex justify-center md:justify-end">
+        <div className="resume-img py-5 md:w-1/2 flex justify-center md:justify-end">
           <img
             className="w-[300px]"
             src={ResumeImg}
@@ -24,24 +25,10 @@ export default function Resume() {
               Resume
             </h1>
             <p className="respara">
-              You can view my resume{" 👇🏻"}
+              You can view my resume by clicking on the button below 👇
               </p>
              
-        
-              <button
-                className="glow-on-hover" type="button"
-                href={config.link}
-                download="Aravind Resume.pdf"
-               
-                rel="noopener noreferrer"
-              >
-                Download
-              </button>
-            {/* </p> */}
-            
-
-
-
+  <a href={config.link} className="download glow-on-hover text-cyan-300"  download="Aravind_Resume.pdf">Download</a>
           </div>
         </div>
       </section>

@@ -12,6 +12,7 @@
   import Express from "../Assets/express.png";
   import figma from "../Assets/figma.png";
 import MySql from "../Assets/mysql.png";
+import "./About.css";
 
 const images = [
     Html,
@@ -36,7 +37,7 @@ function Marquee() {
     const marqueeImages = [...images, ...images];
     return (
         <div className="marquee-wrapper">
-            <div className="marquee">
+            <div className="marquee ">
                 {marqueeImages.map((src, idx) => (
                     <img src={src} alt="" key={idx} />
                 ))}
@@ -67,9 +68,8 @@ professionals, and grow professionally`,
     <h1 className="abo text-3xl md:text-4xl text-white border-b-4 border-primary mb-5 w-[170px] font-bold text-center mx-auto">
   About Me
 </h1>
-            <p className="p-4 md:p-5 text-base md:text-lg">{config.line1}</p>
-            {/* <p className="p-5">{config.line2}</p>
-            <p className="p-5">{config.line3}</p> */}
+            <p className="aboutpara p-4 md:p-5 text-base md:text-lg">{config.line1}</p>
+           
           </div>
         </div>
       </section>

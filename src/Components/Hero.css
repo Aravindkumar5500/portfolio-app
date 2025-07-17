@@ -1,0 +1,44 @@
+/* .name{
+ 
+  font-weight: bold;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+.image-section:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+
+}
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+ 
+  }
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .image-section {
+  margin: 250px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  }
+  
+}

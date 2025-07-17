@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
-import HeroImg from '../Assets/anime.png';
+import HeroImg from '../Assets/animea.png';
 import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
-
+import './Hero.css';
 
 
 
@@ -75,7 +75,7 @@ export default function Hero() {
       </div>
     </div>
     {/* Image Section */}
-  <div className="flex justify-center md:justify-end w-full">
+  <div className="image-section flex justify-center md:justify-end w-full">
 <img
   className="w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] rounded-lg shadow-lg m-6 object-cover"
   src={HeroImg}
