@@ -62,14 +62,14 @@ This portfolio showcases:
 
     (Add screenshots of your home section, navbar, or projects)
 
-📷 ![Home](<img width="1319" height="683" alt="port" src="https://github.com/user-attachments/assets/85f836e8-0678-4822-93cf-d275096bc4f8" />)
-
+### 🏠 Home Section
+![Home Screenshot](./Assets/port.png)
 
 
 ⚙️ How to Run Locally
 
 # 1. Clone the repo
-git clone https://github.com/yourusername/portfolio-react.git
+git clone (https://github.com/Aravindkumar5500/portfolio-app)
 
 # 2. Go into the project folder
 cd portfolio-react
