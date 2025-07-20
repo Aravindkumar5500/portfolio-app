@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+💼 Frontend Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi! I’m Aravind Kumar, a frontend web developer passionate about building responsive, clean, and user-friendly websites.
+This is my personal portfolio built using React and Tailwind CSS, featuring my projects, skills, and contact info.
 
-## Available Scripts
+    🚀 Live Demo: (https://portfolio-ow0yfbjaq-aravinds-projects-8d0b0301.vercel.app/)
 
-In the project directory, you can run:
+🧾 Table of Contents
 
-### `npm start`
+    🧑 About Me
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    🚀 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ✨ Features
 
-### `npm test`
+    📷 Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ⚙️ How to Run Locally
 
-### `npm run build`
+    📁 Folder Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    📬 Contact
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👨‍💻 About Me
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I’m a React developer focused on creating smooth user experiences and modern UI.
+This portfolio showcases:
 
-### `npm run eject`
+    My featured projects
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Frontend skills (React + Tailwind)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    A custom mobile nav menu
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Clean and responsive layout
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🚀 Tech Stack
 
-## Learn More
+    Frontend: React.js, Tailwind CSS, Custom CSS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Routing: React Router (if used)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Animation: CSS transitions, text-shadow, hover effects
 
-### Code Splitting
+    Deployment: Vercel / Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+✨ Features
 
-### Analyzing the Bundle Size
+    ✅ Fixed Navbar with blur effect
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ✅ Mobile Navigation with toggle
 
-### Making a Progressive Web App
+    ✅ Responsive layout for all screen sizes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ✅ Hover animations and UI enhancements
 
-### Advanced Configuration
+    ✅ Clean component structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ✅ Easy to customize
 
-### Deployment
+📷 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    (Add screenshots of your home section, navbar, or projects)
 
-### `npm run build` fails to minify
+### 🏠 Home Section
+![Home Screenshot](./Assets/port.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+⚙️ How to Run Locally
+
+# 1. Clone the repo
+git clone (https://github.com/Aravindkumar5500/portfolio-app)
+
+# 2. Go into the project folder
+cd portfolio-react
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
