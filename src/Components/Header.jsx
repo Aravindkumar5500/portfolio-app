@@ -8,10 +8,10 @@ export default function Header() {
 
     return (
         <>
-            <header className="head flex justify-between px-5 py-2 ">
+            <header className="head flex justify-between px-5 py-2">
                 <a className="welcome font-bold px-2 text-rose-300" href="/">Welcome</a>
                 <nav className="hidden md:block">
-                    <ul className=" flex text-white">
+                    <ul className="flex text-white">
                         <li><a href="/">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#project">Project</a></li>
