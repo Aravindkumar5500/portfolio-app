@@ -82,8 +82,8 @@ export default function Project() {
                 <h3 className="text-3xl font-bold text-white mb-2">{projects[0].title}</h3>
                 <p className="text-gray-300 mb-6 max-w-md">{projects[0].description}</p>
                 <div className="flex gap-4">
-                  <a href={projects[0].link} className="p-3 bg-white text-primary rounded-xl hover:bg-accent hover:text-white transition-all"><AiOutlineGithub size={22} /></a>
-                  <a href="#" className="p-3 bg-white/10 text-white rounded-xl hover:bg-accent-cyan transition-all"><AiOutlineLink size={22} /></a>
+                  <a href={projects[0].link} target="_blank" rel="noreferrer" className="p-3 bg-white text-primary rounded-xl hover:bg-accent hover:text-white transition-all"><AiOutlineGithub size={22} /></a>
+                  <a href={projects[0].link} target="_blank" rel="noreferrer" className="p-3 bg-white/10 text-white rounded-xl hover:bg-accent-cyan transition-all"><AiOutlineLink size={22} /></a>
                 </div>
               </div>
             </motion.div>
@@ -99,7 +99,7 @@ export default function Project() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent p-6 flex flex-col justify-end">
                 <h3 className="text-xl font-bold text-white mb-2">{projects[1].title}</h3>
                 <p className="text-gray-300 text-sm mb-4 line-clamp-2">{projects[1].description}</p>
-                <a href={projects[1].link} className="w-10 h-10 flex items-center justify-center bg-white/10 text-white rounded-lg hover:bg-accent transition-all"><AiOutlineGithub size={20} /></a>
+                <a href={projects[1].link} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center bg-white/10 text-white rounded-lg hover:bg-accent transition-all"><AiOutlineGithub size={20} /></a>
               </div>
             </motion.div>
           )}
@@ -114,7 +114,7 @@ export default function Project() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent p-6 flex flex-col justify-end">
                 <h3 className="text-xl font-bold text-white mb-2">{projects[2].title}</h3>
                 <p className="text-gray-300 text-sm mb-4 line-clamp-2">{projects[2].description}</p>
-                <a href={projects[2].link} className="w-10 h-10 flex items-center justify-center bg-white/10 text-white rounded-lg hover:bg-accent-cyan transition-all"><AiOutlineLink size={20} /></a>
+                <a href={projects[2].link} target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center bg-white/10 text-white rounded-lg hover:bg-accent-cyan transition-all"><AiOutlineLink size={20} /></a>
               </div>
             </motion.div>
           )}
