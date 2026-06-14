@@ -1,68 +1,75 @@
-import { useState } from 'react';
-import './SkillDisplay.css';
+import React from 'react';
+import { motion } from 'framer-motion';
 
-const skillsData = [
-  { title: 'HTML', percent: 95 },
-  { title: 'CSS', percent: 70 },
-  { title: 'JavaScrpit', percent: 90 },
-  { title: 'Java', percent: 70 },
-  { title: 'ReactJs', percent: 80 },
-  { title: 'Bootstrap', percent: 65 },
-  { title: 'Node', percent: 75 },
-  { title: 'Express', percent: 70 },
-  { title: 'MongoDB', percent: 60 },
-  { title: 'MySQL', percent: 50 },
-  { title: 'Git', percent: 80 },
-  { title: 'Spring Boot', percent: 60 },
-];
-
-const SkillDisplay = () => {
-  const [currentSkill, setCurrentSkill] = useState(skillsData[0]);
-  const radius = 120;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (currentSkill.percent / 100) * circumference;
+const Skillset = () => {
+  const categories = [
+    {
+      name: "Frontend",
+      skills: ["React.js", "Next.js", "Tailwind CSS", "Redux", "Framer Motion"],
+      icon: "🎨"
+    },
+    {
+      name: "Backend",
+      skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"],
+      icon: "⚙️"
+    },
+    {
+      name: "Tools",
+      skills: ["Git", "Docker", "AWS", "Firebase", "Postman"],
+      icon: "🛠️"
+    }
+  ];
 
   return (
-    <main className="skill-main">
-      <section className="skill-section">
-        <div className="button-grid">
-          {skillsData.map((skill, index) => (
-            <button
-              key={index}
-              className={`skill-button${currentSkill.title === skill.title ? ' active' : ''}`}
-              onClick={() => setCurrentSkill(skill)}
-            >
-              {skill.title}
-            </button>
-          ))}
+    <section id="skills" className="py-24 px-6 md:px-20 bg-primary">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            Technical <span className="gradient-text">Arsenal</span>
+          </h2>
+          <p className="text-gray-400 max-w-xl mx-auto">
+            The tools and technologies I use to bring ideas to life. I focus on modern, scalable, and efficient stacks.
+          </p>
         </div>
 
-        <div className="circle-container">
-          <svg className="progress-ring" viewBox="0 0 290 290">
-            <circle
-              cx="145"
-              cy="145"
-              r={radius}
-              strokeWidth="30"
-              fill="transparent"
-              className="circle-background"
-            />
-            <circle
-              cx="145"
-              cy="145"
-              r={radius}
-              strokeWidth="30"
-              fill="transparent"
-              className="circle-progress"
-              strokeDasharray={circumference}
-              strokeDashoffset={strokeDashoffset}
-            />
-          </svg>
-          <span className="percent-text">{currentSkill.percent}%</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {categories.map((cat, idx) => (
+            <motion.div 
+              key={idx}
+              whileHover={{ scale: 1.02 }}
+              className="glass p-8 rounded-[2.5rem] border border-white/5 relative group"
+            >
+              <div className="absolute top-8 right-8 text-3xl opacity-20 group-hover:opacity-100 transition-opacity">
+                {cat.icon}
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-8">{cat.name}</h3>
+              
+              <div className="flex flex-wrap gap-3">
+                {cat.skills.map(skill => (
+                  <span 
+                    key={skill}
+                    className="px-4 py-2 bg-secondary border border-white/10 rounded-xl text-gray-300 text-sm font-medium hover:border-accent hover:text-white transition-all cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              {/* Decorative accent */}
+              <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map(i => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-accent/20 border border-white/10" />
+                  ))}
+                </div>
+                <span className="text-xs text-gray-500 font-mono tracking-tighter">Level: Expert</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 
-export default SkillDisplay;
+export default Skillset;

@@ -1,90 +1,72 @@
-import { useEffect, useState, useMemo } from 'react';
-import HeroImg from '../Assets/animea.png';
 import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
-import './Hero.css';
-
-
+import { motion } from 'framer-motion';
+const HeroImg = "/Assets/animea.png";
 
 export default function Hero() {
-    const config = {
-        // subtitle: "I am a Full-stack Developer",
-        social: {
-            linkedin: "https://www.linkedin.com/in/aravind-kumar-37116b2b2/",
-            Github: "https://github.com/Aravindkumar5500"
-        }
-    };
+  return (
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden py-20">
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="z-10"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-widest mb-8">
+          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          Available for new projects
+        </div>
 
-    const words = useMemo(() => [
-        "I am a Full-stack Developer",
-        "Welcome to My Portfolio",
-        "Explore My Projects"
-    ], []);
-    const [start,setStart] = useState(0);
-    const [end,setEnd] = useState(0);
-    const [isDelting, setIsDeleting] = useState(false);
-    const [display,SetDisplay] = useState("")
+        <h1 className="font-display text-6xl md:text-9xl font-black text-white mb-6 leading-none tracking-tighter">
+          FULL STACK <br />
+          <span className="gradient-text">ARCHITECT</span>
+        </h1>
 
-    useEffect(()=>{
-        let timeout;
-        const currentWord = words[start]
-        if (isDelting){
-            SetDisplay(currentWord.substring(0, end-1))
-            timeout = setTimeout( () => setEnd(end-1), 100)
-            if (end === 0) {
-                setIsDeleting(false);
-                setStart((start + 1) % words.length);
-                SetDisplay("");
-                setEnd(0);
-            }
-        } else {
-            SetDisplay (currentWord.substring(0 , end +1))
-            timeout = setTimeout(()=> setEnd (end +1 ), 200 )
-            if (end === currentWord.length) {
-                setIsDeleting(true);
-                timeout = setTimeout(() => setIsDeleting(true), 2000);
-            }
+        <p className="text-gray-400 text-lg md:text-2xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+          I design and develop <span className="text-white font-medium">high-performance</span> digital systems. 
+          Specializing in the MERN stack to deliver seamless, scalable, and visually stunning web experiences.
+        </p>
 
-        }
-        return () => clearTimeout(timeout)
-    }
-, [end, isDelting, start, words.length, words]);
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+          <a href="#contact" className="group relative px-10 py-5 bg-white text-black font-black rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
+            <span className="relative z-10">LET'S TALK</span>
+            <div className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+          </a>
+          <a href="#projects" className="px-10 py-5 border border-white/10 text-white font-bold rounded-full hover:bg-white/5 transition-all">
+            VIEW RECENT WORK
+          </a>
+        </div>
 
-    return (
-        <>
-    
-    <section className="herosec flex flex-col px-4 sm:px-8 py-8 bg-primary justify-center items-center gap-y-8">
-  <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-    {/* Text Section */}
-    <div className="flex flex-col items-center md:items-start text-center md:text-left w-full">
-      <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-hero-font mb-4 leading-tight whitespace-nowrap">
-  Hi, I'm <span className="name text-cyan-300">Aravind</span> Kumar
-</h1>
-     <div className='hero-subtitle mb-4'>
-  <h2 className="text-xl sm:text-2xl min-h-[2.5rem] whitespace-nowrap">
-    {display}
-    <span className="border-r-2 border-white animate-pulse ml-1"></span>
-  </h2>
-</div>
-      <div className="flex py-2 justify-center md:justify-start">
-        <a href={config.social.linkedin} className="pr-5 hover:text-white">
-          <AiOutlineLinkedin color='blue' size={36} />
-        </a>
-        <a href={config.social.Github} className="pr-5 hover:text-white">
-          <AiOutlineGithub color='orange' size={36} />
-        </a>
-      </div>
-    </div>
-    {/* Image Section */}
-  <div className="image-section flex justify-center md:justify-end w-full">
-<img
-  className="w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] rounded-lg shadow-lg m-6 object-cover"
-  src={HeroImg}
-  alt="Hero section illustration"
-/>
-</div>
-  </div>
-</section>
-            
-        </>
-    );
+        {/* Floating Socials */}
+        <div className="flex items-center justify-center gap-8">
+          {[
+            { icon: <AiOutlineGithub size={28} />, href: "https://github.com/aravindrps" },
+            { icon: <AiOutlineLinkedin size={28} />, href: "https://www.linkedin.com/in/aravindkumarr02/" }
+          ].map((social, idx) => (
+            <motion.a 
+              key={idx}
+              whileHover={{ y: -5, color: "#00ffcc" }}
+              href={social.href}
+              className="text-gray-500 transition-colors"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {social.icon}
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Hero Image - Floating subtly */}
+      <motion.div 
+        className="absolute bottom-[-10%] right-[-5%] w-[40%] opacity-20 pointer-events-none hidden lg:block"
+        animate={{ y: [0, -40, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <img src={HeroImg} alt="Abstract Visual" className="w-full h-auto blur-sm" />
+      </motion.div>
+    </section>
+  );
 }

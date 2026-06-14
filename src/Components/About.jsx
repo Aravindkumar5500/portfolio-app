@@ -1,79 +1,83 @@
- import AboutImg from "../Assets/about.png";
- import Html from "../Assets/html5.png";
- import Css from "../Assets/css3.png";
-  import Js from "../Assets/js.png";
-  import Java from "../Assets/java.png";
- import React from "../Assets/react.png";
-  import Node from "../Assets/nodejs.png";
-  import Mongo from "../Assets/mongo.png";
-   import Tailwind from "../Assets/tailwind.png";
-  import Github from "../Assets/git.png";
-  import Bootstrap from "../Assets/bootstrap.png";
-  import Express from "../Assets/express.png";
-  import figma from "../Assets/figma.png";
-import MySql from "../Assets/mysql.png";
-import "./About.css";
+import { motion } from 'framer-motion';
+const AboutImg = "/Assets/about.png";
 
-const images = [
-    Html,
-    Css,
-    Js,
-    Java,
-    React,
-    Node,
-    Mongo,
-    Express,
-     Bootstrap,
-    Tailwind,
-    Github,
-  
-    figma,
-    
-   MySql,
-];
-
-function Marquee() {
-    // Duplicate images for seamless loop
-    const marqueeImages = [...images, ...images];
-    return (
-        <div className="marquee-wrapper">
-            <div className="marquee ">
-                {marqueeImages.map((src, idx) => (
-                    <img src={src} alt="" key={idx} />
-                ))}
-            </div>
-        </div>
-    );
-}
 export default function About() {
-  const config = {
-    line1: `Motivated and possessing a strong foundation in modern web
-development technologies. Eager to launch a career as a Full
-Stack Developer, leveraging skills in both front-end and back-end
-development to contribute to innovative projects. Seeking an
-opportunity to apply technical skills, learn from seasoned
-professionals, and grow professionally`,
-    line2: "I am a passionate developer.",
-    line3: "I love building web applications."
-  };
+  const stats = [
+    { label: "Years Experience", value: "2+" },
+    { label: "Projects Completed", value: "15+" },
+    { label: "Happy Clients", value: "10+" }
+  ];
 
   return (
-    <>
-           <section id="about" className="flex flex-col md:flex-row bg-secondary px-4 md:px-12 py-10 items-center">
-        <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-          <img src={AboutImg} alt="About me" className="max-w-xs md:max-w-md w-full rounded-lg shadow-lg" />
+    <section id="about" className="py-24 px-6 md:px-20 bg-primary overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        
+        {/* Visual Side */}
+        <div className="w-full md:w-1/2 relative group">
+          <div className="absolute -inset-4 bg-gradient-to-tr from-accent to-accent-cyan rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="relative glass p-4 rounded-3xl overflow-hidden border border-white/10"
+          >
+            <img 
+              src={AboutImg} 
+              alt="About Aravind" 
+              className="w-full h-auto rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+            {/* Overlay Info */}
+            <div className="absolute bottom-10 left-10 p-6 glass rounded-2xl border border-white/20">
+              <p className="text-white font-bold text-xl mb-1">Aravind Kumar</p>
+              <p className="text-accent-cyan text-sm">Full Stack Developer</p>
+            </div>
+          </motion.div>
         </div>
-        <div className="w-full md:w-1/2 flex justify-center">
-          <div className="flex flex-col justify-center text-white max-w-xl">
-    <h1 className="abo text-3xl md:text-4xl text-white border-b-4 border-primary mb-5 w-[170px] font-bold text-center mx-auto">
-  About Me
-</h1>
-            <p className="aboutpara p-4 md:p-5 text-base md:text-lg">{config.line1}</p>
-           
+
+        {/* Content Side */}
+        <div className="w-full md:w-1/2">
+          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-8 leading-tight">
+            I craft <span className="gradient-text">scalable</span> solutions <br />
+            with modern code.
+          </h2>
+          
+          <div className="space-y-6 mb-12">
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Based in India, I specialize in building high-performance web applications using the 
+              <span className="text-white font-medium"> MERN stack</span>. My approach focuses on clean architecture, 
+              responsive design, and exceptional user experiences.
+            </p>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              When I'm not coding, I explore new technologies, contribute to open-source, and mentor 
+              aspiring developers. I believe in continuous learning and the power of collaboration.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-6">
+            {stats.map((stat, idx) => (
+              <div key={idx} className="p-4 rounded-2xl glass border border-white/5 text-center">
+                <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
+                <p className="text-gray-500 text-xs uppercase tracking-widest">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-      <Marquee />
-    </>
+      </div>
+
+      {/* Skills Marquee - Enhanced */}
+      <div className="mt-24 py-12 border-y border-white/5 overflow-hidden">
+        <div className="flex animate-slide-left whitespace-nowrap gap-12">
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex gap-12 items-center text-5xl font-display font-black text-white/5 uppercase select-none">
+              <span>React.js</span> <span>•</span>
+              <span>Node.js</span> <span>•</span>
+              <span>MongoDB</span> <span>•</span>
+              <span>Tailwind CSS</span> <span>•</span>
+              <span>Next.js</span> <span>•</span>
+              <span>Express</span> <span>•</span>
+              <span>JavaScript</span> <span>•</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

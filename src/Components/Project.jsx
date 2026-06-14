@@ -1,90 +1,123 @@
- import "./Project.css"
- import Calculator from "../Assets/Calculator.png";
- import Todo from "../Assets/TODO.png";
- import Tictok from "../Assets/Tictok.png";
- import Clinic from "../Assets/Clinic.png"
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-
-const projects = [
-  {
-    tag: "Calculator",
-    image: Calculator,
-    
-    desc: "A calculator is more than numbers—it’s a smart mix of logic, feedback, and clean UI that lets users solve math problems quickly and smoothly.",
- 
-  },
-  {
-    tag: "Todo",
-    image: Todo,
-  
-    desc: "A to-do app is more than tasks—it’s a clean, responsive experience that helps users track goals, manage time, and stay productive with ease.",
-  
-  },
-  {
-    tag: "tic tac toe",
-    image: Tictok,
-   
-    desc: "Tic Tac Toe is more than a grid—it’s turn-based logic, live state updates, and a simple UI that makes learning fun and addictive.",
- 
-  },
-    {
-    tag: "Appointment-Calendar",
-    image: Clinic,
-    desc: "An appointment calendar is more than picking dates—it’s real-time scheduling, smooth UI, and logic combined to simplify time management",
-    
-  },
-];
+import { useState, useEffect } from "react";
+import { AiOutlineGithub, AiOutlineLink } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 export default function Project() {
+  const [projects, setProjects] = useState([
+    {
+      title: "Premium Portfolio v1",
+      description: "My initial high-end portfolio design featuring smooth transitions and modern aesthetics.",
+      image: "/Assets/port.png",
+      link: "https://github.com/aravindrps",
+      tags: ["React", "Tailwind", "Framer Motion"],
+      size: "large"
+    },
+    {
+      title: "Med-Connect Clinic",
+      description: "Health management system for appointment scheduling and patient records.",
+      image: "/Assets/Clinic.png",
+      link: "https://github.com/aravindrps",
+      tags: ["React", "Firebase"],
+      size: "small"
+    },
+    {
+      title: "Tic-Tac-Toe Pro",
+      description: "Advanced game logic with an interactive UI and multiplayer state management.",
+      image: "/Assets/Tictok.png",
+      link: "https://github.com/aravindrps",
+      tags: ["React", "JavaScript"],
+      size: "small"
+    }
+  ]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/projects');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.length > 0) {
+            setProjects(prev => JSON.stringify(prev) === JSON.stringify(data) ? prev : data);
+          }
+        }
+      } catch (err) {
+        console.log("Backend fetch failed, using local fallback.");
+      }
+    };
+    fetchProjects();
+  }, []);
+
   return (
-    <section id="project" className="flex flex-col py-20 px-5 justify-center bg-primary min-h-screen">
-      <div className="w-full flex flex-col px-10 py-5">
-        <h1 className="pro text-4xl text-white border-b-4 border-secondary mb-5 w-[150px] font-bold">
-          Projects
-        </h1>
-        <p className="propara text-white">Here are some of my best projects that I have worked on and that I am proud of 👇</p>
-      </div>
-      <div className="project-container w-full flex justify-center">
-        <div className="container max-w-5xl">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-             effect="slide"
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-          >
-            {projects.map((proj, idx) => (
-              <SwiperSlide key={idx}>
-                <div className="bg-black rounded-2xl shadow-lg p-5 flex flex-col h-full">
-                  <div className="relative mb-4">
-                    <img src={proj.image} alt={proj.title} className="imagebox w-60 h-60 object-cover justify-items-center" />
-                    <span className="absolute top-3 left-3 bg-purple-500 text-white text-xs px-3 py-1 rounded-full font-semibold">{proj.tag}</span>
-                  </div>
-                  <h2 className="font-bold text-lg mb-2">{proj.title}</h2>
-                  <p className="text-gray-600 mb-4">{proj.desc}</p>
-                  <div className="flex items-center mt-auto pt-4 border-t">
-                    <button className="readmore">
-  <a href="https://github.com/Aravindkumar5500"
-  className="ml-auto text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-600 transition duration-300"
->
-  Read More
-</a>
-</button>
-           </div>
+    <section id="projects" className="py-24 px-6 md:px-20 bg-primary">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="max-w-2xl">
+            <span className="text-accent font-semibold tracking-widest uppercase text-sm mb-4 block">Portfolio</span>
+            <h2 className="text-4xl md:text-6xl font-display font-extrabold text-white leading-tight">
+              Selected <span className="gradient-text">Works</span>
+            </h2>
+            <p className="text-gray-400 mt-6 text-lg leading-relaxed">
+              A collection of projects where I've combined technical problem-solving with creative design to build impactful solutions.
+            </p>
+          </div>
+          <a href="https://github.com/aravindrps" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
+            <span className="font-medium">View all on GitHub</span>
+            <AiOutlineGithub size={24} className="group-hover:rotate-12 transition-transform" />
+          </a>
+        </div>
+
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[800px]">
+          {/* Main Large Project */}
+          {projects[0] && (
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="md:col-span-2 md:row-span-2 group relative rounded-3xl overflow-hidden glass border border-white/5"
+            >
+              <img src={projects[0].image} alt={projects[0].title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent p-8 flex flex-col justify-end">
+                <div className="flex gap-2 mb-4">
+                  {projects[0].tags?.map(tag => <span key={tag} className="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full border border-accent/30">{tag}</span>)}
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                <h3 className="text-3xl font-bold text-white mb-2">{projects[0].title}</h3>
+                <p className="text-gray-300 mb-6 max-w-md">{projects[0].description}</p>
+                <div className="flex gap-4">
+                  <a href={projects[0].link} className="p-3 bg-white text-primary rounded-xl hover:bg-accent hover:text-white transition-all"><AiOutlineGithub size={22} /></a>
+                  <a href="#" className="p-3 bg-white/10 text-white rounded-xl hover:bg-accent-cyan transition-all"><AiOutlineLink size={22} /></a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Small Project 1 */}
+          {projects[1] && (
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="group relative rounded-3xl overflow-hidden glass border border-white/5 min-h-[300px]"
+            >
+              <img src={projects[1].image} alt={projects[1].title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent p-6 flex flex-col justify-end">
+                <h3 className="text-xl font-bold text-white mb-2">{projects[1].title}</h3>
+                <p className="text-gray-300 text-sm mb-4 line-clamp-2">{projects[1].description}</p>
+                <a href={projects[1].link} className="w-10 h-10 flex items-center justify-center bg-white/10 text-white rounded-lg hover:bg-accent transition-all"><AiOutlineGithub size={20} /></a>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Small Project 2 */}
+          {projects[2] && (
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="group relative rounded-3xl overflow-hidden glass border border-white/5 min-h-[300px]"
+            >
+              <img src={projects[2].image} alt={projects[2].title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent p-6 flex flex-col justify-end">
+                <h3 className="text-xl font-bold text-white mb-2">{projects[2].title}</h3>
+                <p className="text-gray-300 text-sm mb-4 line-clamp-2">{projects[2].description}</p>
+                <a href={projects[2].link} className="w-10 h-10 flex items-center justify-center bg-white/10 text-white rounded-lg hover:bg-accent-cyan transition-all"><AiOutlineLink size={20} /></a>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

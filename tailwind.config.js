@@ -1,65 +1,42 @@
 /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [
-//     "./src/**/*.{js,jsx,ts,tsx}",
-//   ],
-//   theme: {
-//     extend: {
-//       borderColor :{
-//         "primary" : "rgb(85 81 277)",
-//         "secondary": "#2b2d77",
-//       }
-//     },
-//     fontFamily:{
-//       "hero-font":"Merienda"
-//     }
-//   },
-//   plugins: [],
-// }
-
-// module.exports = {
-//   content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// };
-// module.exports = {
-//   content: ['./src/**/*.{html,js,jsx,ts,tsx}'], // Ensure all relevant files are included
-//   theme: {
-//     extend: {
-//       colors: {
-//         primary: 'rgb(85 81 227)', // Ensure the primary color is defined
-//         secondary: '#222692', // Ensure the secondary color is defined
-//       },
-//     },
-//   },
-//   plugins: [],
-// };
-
-// tailwind.config.js
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // adjust as needed
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class", // or 'media'
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: "#000000",
-        secondary: "#000000",
-        tomato: "tomato",
-        antiquewhite: "antiquewhite",
+        primary: "#080808", // Deep Black
+        secondary: "#121212", // Rich Charcoal
+        accent: "#00ffcc", // Neo-Mint
+        "accent-secondary": "#7000ff", // Electric Purple
+        surface: "#1a1a1a",
+        "card-bg": "rgba(26, 26, 26, 0.6)",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Outfit", "sans-serif"],
+        display: ["Sora", "sans-serif"],
+      },
+      backgroundImage: {
+        "gradient-neon": "linear-gradient(135deg, #00ffcc 0%, #7000ff 100%)",
+        "gradient-surface": "radial-gradient(circle at center, #1a1a1a 0%, #080808 100%)",
       },
       animation: {
-        marquee: "marquee 20s linear infinite",
+        "glow-slow": "glow 8s ease-in-out infinite",
+        "float-alt": "floatAlt 5s ease-in-out infinite",
       },
       keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
+        glow: {
+          "0%, 100%": { opacity: 0.3 },
+          "50%": { opacity: 0.6 },
         },
+        floatAlt: {
+          "0%, 100%": { transform: "translateY(0) rotate(0)" },
+          "50%": { transform: "translateY(-15px) rotate(2deg)" },
+        }
       },
     },
   },
