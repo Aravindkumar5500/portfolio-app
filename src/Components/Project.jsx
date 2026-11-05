@@ -8,7 +8,7 @@ export default function Project() {
       title: "Premium Portfolio v1",
       description: "My initial high-end portfolio design featuring smooth transitions and modern aesthetics.",
       image: "/Assets/port.png",
-      link: "https://github.com/aravindrps",
+      link: "https://github.com/Aravindkumar5500",
       tags: ["React", "Tailwind", "Framer Motion"],
       size: "large"
     },
@@ -16,7 +16,7 @@ export default function Project() {
       title: "Med-Connect Clinic",
       description: "Health management system for appointment scheduling and patient records.",
       image: "/Assets/Clinic.png",
-      link: "https://github.com/aravindrps",
+      link: "https://github.com/Aravindkumar5500",
       tags: ["React", "Firebase"],
       size: "small"
     },
@@ -24,7 +24,7 @@ export default function Project() {
       title: "Tic-Tac-Toe Pro",
       description: "Advanced game logic with an interactive UI and multiplayer state management.",
       image: "/Assets/Tictok.png",
-      link: "https://github.com/aravindrps",
+      link: "https://github.com/Aravindkumar5500",
       tags: ["React", "JavaScript"],
       size: "small"
     }
@@ -60,7 +60,7 @@ export default function Project() {
               A collection of projects where I've combined technical problem-solving with creative design to build impactful solutions.
             </p>
           </div>
-          <a href="https://github.com/aravindrps" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
+          <a href="https://github.com/Aravindkumar5500" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
             <span className="font-medium">View all on GitHub</span>
             <AiOutlineGithub size={24} className="group-hover:rotate-12 transition-transform" />
           </a>
