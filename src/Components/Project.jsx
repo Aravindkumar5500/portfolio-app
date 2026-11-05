@@ -5,26 +5,26 @@ import { motion } from "framer-motion";
 export default function Project() {
   const [projects, setProjects] = useState([
     {
-      title: "Premium Portfolio v1",
+      title: "Personal Developer Portfolio",
       description: "My initial high-end portfolio design featuring smooth transitions and modern aesthetics.",
       image: "/Assets/port.png",
-      link: "https://github.com/Aravindkumar5500",
+      link: "https://github.com/Aravindkumar5500/portfolio-app",
       tags: ["React", "Tailwind", "Framer Motion"],
       size: "large"
     },
     {
-      title: "Med-Connect Clinic",
-      description: "Health management system for appointment scheduling and patient records.",
+      title: "Clinic Appointment Calendar",
+      description: "Responsive clinic appointment calendar with monthly scheduling and local browser persistence.",
       image: "/Assets/Clinic.png",
-      link: "https://github.com/Aravindkumar5500",
+      link: "https://github.com/Aravindkumar5500/appointment-calendar",
       tags: ["React", "Firebase"],
       size: "small"
     },
     {
-      title: "Tic-Tac-Toe Pro",
-      description: "Advanced game logic with an interactive UI and multiplayer state management.",
+      title: "Tic-Tac-Toe",
+      description: "Two-player React game with turn tracking, win and draw detection, a winning-line indicator, and reset controls.",
       image: "/Assets/Tictok.png",
-      link: "https://github.com/Aravindkumar5500",
+      link: "https://github.com/Aravindkumar5500/Tic-Tac-Toe",
       tags: ["React", "JavaScript"],
       size: "small"
     }
