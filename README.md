@@ -1,81 +1,81 @@
-💼 Frontend Developer Portfolio
+# Aravind Kumar — Developer Portfolio
 
-Hi! I’m Aravind Kumar, a frontend web developer passionate about building responsive, clean, and user-friendly websites.
-This is my personal portfolio built using React and Tailwind CSS, featuring my projects, skills, and contact info.
+A responsive personal portfolio built with React and Tailwind CSS. It presents an introduction, skills, experience, selected projects, resume information, and contact details.
 
-    🚀 Live Demo: (https://portfolio-ow0yfbjaq-aravinds-projects-8d0b0301.vercel.app/)
+<div align="center">
 
-🧾 Table of Contents
+**Live site:** https://portfolio-app-swart-eta.vercel.app
 
-    🧑 About Me
+</div>
 
-    🚀 Tech Stack
+## Highlights
 
-    ✨ Features
+- Responsive portfolio layout for desktop and mobile
+- Hero, About, Experience, Skills, Projects, Resume, and Contact sections
+- Reusable React components
+- Scroll-reveal interactions and a custom cursor experience
+- Framer Motion animations
+- Project cards with technology tags and links
+- Contact form UI with component-level tests
 
-    📷 Screenshots
+## Tech stack
 
-    ⚙️ How to Run Locally
+- React 18
+- Tailwind CSS 3
+- Framer Motion
+- React Icons
+- Create React App / react-scripts
 
-    📁 Folder Structure
+## Run locally
 
-    📬 Contact
+Requirements: Node.js and npm.
 
-👨‍💻 About Me
-
-I’m a React developer focused on creating smooth user experiences and modern UI.
-This portfolio showcases:
-
-    My featured projects
-
-    Frontend skills (React + Tailwind)
-
-    A custom mobile nav menu
-
-    Clean and responsive layout
-
-🚀 Tech Stack
-
-    Frontend: React.js, Tailwind CSS, Custom CSS
-
-    Routing: React Router (if used)
-
-    Animation: CSS transitions, text-shadow, hover effects
-
-    Deployment: Vercel / Netlify
-
-✨ Features
-
-    ✅ Fixed Navbar with blur effect
-
-    ✅ Mobile Navigation with toggle
-
-    ✅ Responsive layout for all screen sizes
-
-    ✅ Hover animations and UI enhancements
-
-    ✅ Clean component structure
-
-    ✅ Easy to customize
-
-📷 Screenshots
-
-    (Add screenshots of your home section, navbar, or projects)
-
-### 🏠 Home Section
-![Home Screenshot](./Assets/port.png)
-
-
-⚙️ How to Run Locally
-
-# 1. Clone the repo
-git clone (https://github.com/Aravindkumar5500/portfolio-app)
-
-# 2. Go into the project folder
-cd portfolio-react
-
-# 3. Install dependencies
+```bash
+git clone https://github.com/Aravindkumar5500/portfolio-app.git
+cd portfolio-app
 npm install
+npm start
+```
 
-# 4. Start the development server
-npm run dev
+The development server opens at `http://localhost:3000`.
+
+## Available scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm start` | Start the local development server |
+| `npm test` | Run the React test runner |
+| `npm run build` | Create a production build |
+
+## Project structure
+
+```text
+src/
+  Components/
+    Header.jsx
+    Hero.jsx
+    About.jsx
+    Project.jsx
+    Experience.jsx
+    Skillset.jsx
+    Resume.jsx
+    Contact.jsx
+    Footer.jsx
+    CustomCursor.jsx
+    ScrollJourney.jsx
+  App.js
+  App.css
+public/
+  Assets/     Portfolio and project imagery
+```
+
+## Notes
+
+The Projects component includes local fallback project data and attempts to fetch dynamic project data from a development API at `http://localhost:5000/api/projects`. If that local endpoint is unavailable, the fallback cards are used.
+
+Before presenting this as a production portfolio, verify that every project description, screenshot, and destination URL reflects work you can publicly show. Keep private client materials and credentials out of this repository.
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/aravind-kumar-r-dev5500/
+- GitHub: https://github.com/Aravindkumar5500
